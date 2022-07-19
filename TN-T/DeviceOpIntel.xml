@@ -1,0 +1,250 @@
+<ConfigDoc name="DeviceOpIntel">
+	<Key name="Version">5</Key>
+	<Section name="AppSettings">
+		<Key name="AgentCollect">1</Key>
+		<Key name="AgentConnectDirect">1</Key>
+		<Key name="AgentConnectStagingHub">0</Key>
+		<Key name="WiFi">1</Key>
+		<Key name="Ethernet">0</Key>
+		<!-- This file may look the same as v4DeviceOpIntel.xml but -->
+        <!-- starting with v5 WWANData is read as an Integer and not -->
+        <!-- as a Boolean -->
+        <Key name="WWANData">0</Key>
+        <Key name="RequiresCharging">0</Key>
+        <Key name="AbuseNotification">0</Key>
+        <Key name="BatteryCutoff">15</Key>
+        <Key name="OfflineDataPointWatermark">25</Key>
+        <Key name="HeartBeat">120</Key>
+        <Key name="RemoteViewerConsent">0</Key>
+        <Key name="WlanDiagnostics">0</Key>
+        <Key name="AgentAwake">0</Key>
+    </Section>
+	<Section name="CollectIntelSettings">
+		<Section name="IntelEvents">
+			<Section name="EventNames">
+				<Key name="BatteryCharging">1</Key>
+				<Key name="BatteryLow">1</Key>
+				<Key name="AbuseDetection">1</Key>
+			</Section>
+		</Section>
+		<Section name="WiFiIntelSettings">
+			<Section name="AccessPointIntel">
+				<Key name="CollectEnabled">1</Key>
+				<Key name="CollectInterval">240</Key>
+				<Key name="UploadEnabled">1</Key>
+				<Key name="UploadInterval">240</Key>
+				<Key name="CollectAsDelta">0</Key>
+				<Section name="TimeSeries">
+					<Key name="WLAN.AccessPoint.SSID"/>
+					<Key name="WLAN.AccessPoint.Frequency"/>
+					<Key name="WLAN.AccessPoint.RSSI"/>
+					<Key name="WLAN.AccessPoint.BSSID"/>
+				</Section>
+				<Section name="Metadata">
+				</Section>
+			</Section>
+		</Section>
+		<Section name="BatteryIntelSettings">
+			<Section name="BackupBatteryIntel">
+				<Key name="CollectEnabled">1</Key>
+				<Key name="CollectInterval">240</Key>
+				<Key name="UploadEnabled">1</Key>
+				<Key name="UploadInterval">240</Key>
+				<Key name="CollectAsDelta">0</Key>
+				<Section name="TimeSeries">
+					<Key name="BackupBattery.Voltage"/>
+				</Section>
+				<Section name="Metadata">
+				</Section>
+			</Section>
+			<Section name="BatteryIntel">
+				<Key name="CollectEnabled">1</Key>
+				<Key name="CollectInterval">240</Key>
+				<Key name="UploadEnabled">1</Key>
+				<Key name="UploadInterval">240</Key>
+				<Key name="CollectAsDelta">0</Key>
+				<Section name="TimeSeries">
+					<Key name="Battery.ChargerState"/>
+					<Key name="Battery.Level"/>
+					<Key name="Battery.ComputedTimeRemaining"/>
+					<Key name="Battery.Current"/>
+					<Key name="Battery.Temp.Current"/>
+					<Key name="Battery.Health"/>
+					<Key name="Battery.UpTime"/>
+					<Key name="Battery.Voltage"/>
+					<Key name="Battery.Charger.Type"/>
+					<Key name="Battery.BatteryRuntime"/>
+					<Key name="Battery.ExtPowerRuntime"/>
+					<Key name="Battery.ManufacturedDate"/>
+					<Key name="Camera.OnTime"/>
+					<Key name="Display.OnTime"/>
+					<Key name="Flashlight.OnCount"/>
+					<Key name="Flashlight.OnTime"/>
+					<Key name="BT.Scan.OnTime"/>
+					<Key name="Phone.OnTime"/>
+					<Key name="WLAN.OnTime"/>
+				</Section>
+				<Section name="Metadata">
+					<Key name="Battery.SerialNumber"/>
+					<Key name="Battery.Chemistry"/>
+					<Key name="Battery.Authenticated"/>
+				</Section>
+			</Section>
+			<Section name="BatteryGaugeIntel">
+				<Key name="CollectEnabled">1</Key>
+				<Key name="CollectInterval">240</Key>
+				<Key name="UploadEnabled">1</Key>
+				<Key name="UploadInterval">240</Key>
+				<Key name="CollectAsDelta">0</Key>
+				<Section name="TimeSeries">
+					<Key name="Battery.RepCap"/>
+					<Key name="Battery.RepSOC"/>
+					<Key name="Battery.SOH"/>
+					<Key name="Battery.FullCap"/>
+					<Key name="Battery.TTE"/>
+					<Key name="Battery.DesignCap"/>
+					<Key name="Battery.MaxTemp"/>
+					<Key name="Battery.MinTemp"/>
+					<Key name="Battery.MaxVolt"/>
+					<Key name="Battery.MinVolt"/>
+					<Key name="Battery.MaxCurrent"/>
+					<Key name="Battery.MinCurrent"/>
+					<Key name="Battery.TTF"/>
+					<Key name="Battery.FullCapNom"/>
+					<Key name="Battery.FullCapRep"/>
+					<Key name="Battery.TimerH"/>
+					<Key name="Battery.CycleCount"/>
+				</Section>
+				<Section name="Metadata">
+				</Section>
+			</Section>
+		</Section>
+		<Section name="AbuseIntelSettings">
+			<Key name="CollectEnabled">1</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">1</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="MobileComp.Counters.FreeFall"/>
+				<Key name="MobileComp.Counters.HardImpact"/>
+				<Key name="MobileComp.Counters.SoftImpact"/>
+			</Section>
+			<Section name="Metadata">
+			</Section>
+		</Section>
+		<Section name="WWANIntelSettings">
+			<Key name="CollectEnabled">0</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">0</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="WWAN.PhoneNumber"/>
+			</Section>
+			<Section name="Metadata">
+			</Section>
+		</Section>
+		<Section name="BarcodeScannerIntelSettings">
+			<Key name="CollectEnabled">1</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">1</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="Decoder.ScanGoodRead"/>
+				<Key name="Decoder.ScanTriggerPull"/>
+				<Key name="Decoder.ScanGoodReadPerMinute"/>
+				<Key name="Decoder.ScanTriggerPullPerMinute"/>
+			</Section>
+			<Section name="Metadata">
+			</Section>
+		</Section>
+		<Section name="ApplicationIntelSettings">
+			<Key name="CollectEnabled">1</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">1</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="Application[x].BatteryUsage"/>
+				<Key name="Application[x].CPU.ForeGround"/>
+				<Key name="Application[x].CPU.Total"/>
+				<Key name="Application[x].Memory.External"/>
+				<Key name="Application[x].Memory.RAM"/>
+				<Key name="Application[x].Memory.Storage"/>
+				<Key name="Application[x].Network.ConnectionTime"/>
+				<Key name="Application[x].Network.Received"/>
+				<Key name="Application[x].Network.Sent"/>
+				<Key name="Application[x].StayAwake"/>
+				<Key name="Application[x].Scanner.OnTime"/>
+				<Key name="Application[x].AppUsageTime"/>
+			</Section>
+			<Section name="Metadata">
+				<Key name="Application.Count"/>
+				<Key name="Application[x].PackageName"/>
+				<Key name="Application[x].ID"/>
+				<Key name="Application[x].InstallLocation"/>
+				<Key name="Application[x].VersionCode"/>
+				<Key name="Application[x].VersionName"/>
+				<Key name="Application[x].Label"/>
+				<Key name="Application[x].MinSdk"/>
+				<Key name="Application[x].TargetSdk"/>
+			</Section>
+		</Section>
+		<Section name="LocationIntelSettings">
+			<Key name="CollectEnabled">1</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">1</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="GNSS.Altitude"/>
+				<Key name="GNSS.Heading"/>
+				<Key name="GNSS.Latitude"/>
+				<Key name="GNSS.Longitude"/>
+				<Key name="GNSS.LatLong"/>
+				<Key name="GNSS.Location"/>
+				<Key name="GNSS.GPSRuntime"/>
+			</Section>
+			<Section name="Metadata">
+				<Key name="GNSS.Kind"/>
+			</Section>
+		</Section>
+		<Section name="MainSysInfoIntelSettings">
+			<Key name="CollectEnabled">1</Key>
+			<Key name="CollectInterval">240</Key>
+			<Key name="UploadEnabled">1</Key>
+			<Key name="UploadInterval">240</Key>
+			<Key name="CollectAsDelta">0</Key>
+			<Section name="TimeSeries">
+				<Key name="MainSysInfo.WarmBoot"/>
+				<Key name="MainSysInfo.ColdBoot"/>
+				<Key name="MainSysInfo.WWANRuntime"/>
+				<Key name="MainSysInfo.WIFIRuntime"/>
+				<Key name="MainSysInfo.Resume"/>
+				<Key name="MainSysInfo.Runtime"/>
+				<Key name="MainSysInfo.SuspendTime"/>
+				<Key name="MainSysInfo.SystemTime"/>
+				<Key name="MainSysInfo.BacklightRuntime"/>
+				<Key name="MainSysInfo.DockEvents"/>
+				<Key name="MainSysInfo.BluetoothRuntime"/>
+				<Key name="MainSysInfo.KeyBacklightRuntime"/>
+				<Key name="MainSysInfo.FlashlightRuntime"/>
+				<Key name="MainSysInfo.AvailableIPSM"/>
+				<Key name="MainSysInfo.SizeIPSM"/>
+				<Key name="MainSysInfo.AvailableSDCard"/>
+				<Key name="MainSysInfo.SizeSDCard"/>
+				<Key name="MainSysInfo.AvailableData"/>
+				<Key name="MainSysInfo.SizeData"/>
+			</Section>
+			<Section name="Metadata">
+			</Section>
+		</Section>
+	</Section>
+	<HHPReserved name="HHPReserved">
+		<Section>
+			<Key name="EXMVersion">1</Key>
+		</Section>
+	</HHPReserved>
+</ConfigDoc>
