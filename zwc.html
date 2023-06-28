@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+
+
+<html>
+	<style>
+		body {
+		  margin: 0;
+		  overscroll-behavior: none;
+		}
+	</style>
+	
+
+
+<head>
+	<style>
+	body {background-color: powderblue;}
+	h1   {color: blue;}
+	p    {color: red;}
+	</style>
+</head>
+<body>
+
+
+
+	<h1>This is a heading</h1>
+	<p>This is a paragraph.</p>
+	<form action="/action_page.php">
+	  <label for="fname">Text field</label><br>
+	  <input type="text" id="fname" name="fname"><br>
+
+	  <input type="submit" value="Submit">
+	</form>
+
+</body>
+
+<script>
+	window.onload = loadPersistedData();
+
+	function loadPersistedData() {
+	 document.getElementById('fname').value = localStorage.getItem("fname"); //"NeS+D";
+	}
+	
+	window.onbeforeunload = function(){
+		localStorage.setItem("fname", document.getElementById('fname').value);
+	}
+</script>
+</html>
