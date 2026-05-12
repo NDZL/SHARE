@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Deliberately broken manifest. Each comment marks a known-bad line.
+  See sample-app/README.md for the rule each line should trigger.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.brokenapp">
+
+    <!-- Missing: FOREGROUND_SERVICE permission while SyncService.startForeground() is called.    -->
+    <!-- Missing: USE_FULL_SCREEN_INTENT while MainActivity.setFullScreenIntent() is called.      -->
+    <!-- Missing: BLUETOOTH_SCAN/_CONNECT/_ADVERTISE while BluetoothAdapter is used.              -->
+    <!-- Missing: SCHEDULE_EXACT_ALARM while AlarmManager.setExact() is called.                   -->
+    <!-- Missing: POST_NOTIFICATIONS while NotificationManager.notify() is called.                -->
+    <!-- Missing: READ_MEDIA_IMAGES/_VIDEO/_AUDIO; only legacy READ_EXTERNAL_STORAGE is declared. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- A11-MAPS-V1-REMOVED: removed in Android 11. -->
+    <uses-library android:name="com.google.android.maps" android:required="false"/>
+
+    <application
+        android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <!-- A12-ANDROID-EXPORTED-REQUIRED: has intent-filter but no android:exported. -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- A14-FGS-TYPES-REQUIRED: no android:foregroundServiceType. -->
+        <!-- A12-ANDROID-EXPORTED-REQUIRED: no android:exported.       -->
+        <service android:name=".SyncService">
+            <intent-filter>
+                <action android:name="com.example.brokenapp.SYNC"/>
+            </intent-filter>
+        </service>
+
+        <!-- A12-ANDROID-EXPORTED-REQUIRED: receiver missing android:exported.     -->
+        <!-- A15-BOOT-COMPLETED-FGS-RESTRICTIONS: receiver starts FGS from BOOT_COMPLETED. -->
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VIOLATES: A10-TLS-SHA1-CERTS-UNTRUSTED (SHA-1 pin) -->
+<network-security-config>
+    <domain-config>
+        <domain includeSubdomains="true">api.example.com</domain>
+        <pin-set>
+            <pin digest="SHA-1">deadbeefdeadbeefdeadbeefdeadbeefdeadbeef</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>

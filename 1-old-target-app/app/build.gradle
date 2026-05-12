@@ -1,0 +1,11 @@
+// Toy build.gradle - just enough for the runner to detect SDK levels.
+android {
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.example.brokenapp"
+        minSdkVersion 24
+        targetSdkVersion 30          // <-- change this when smoke-testing different rule sets
+        versionCode 1
+        versionName "1.0"
+    }
+}
